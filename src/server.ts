@@ -1,12 +1,14 @@
 import express, { Request, Response } from "express"
+import cors from "cors"
 import connectToDatabase from "./db"
-import userRoutes from "./routes/user.routes"
-import taskRoutes from "./routes/task.routes"
 import categoryRoutes from "./routes/category.routes"
+import taskRoutes from "./routes/task.routes"
+import userRoutes from "./routes/user.routes"
 
 const application = express()
 
 application.use(express.json())
+application.use(cors())
 
 const PORT = 1337
 
